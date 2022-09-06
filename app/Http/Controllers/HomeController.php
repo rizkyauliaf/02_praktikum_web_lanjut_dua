@@ -15,6 +15,6 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         //
-        return "Selamat datang!";
+        return "Selamat datang Di Halaman Home";
     }
 }

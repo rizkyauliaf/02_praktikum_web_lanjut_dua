@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CompanyProfile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +26,28 @@ Route::get('/', function () {
 
 // Route::get('/', [HomeController::class, '__invoke']);
 
-// Route::get('/', [AboutController::class, '__invoke']);
+// Route::get('/about', [AboutController::class, '__invoke']);
 
-Route::get('/{id}', [ArticleController::class, '__invoke']);
+// Route::get('/{id}', [ArticleController::class, '__invoke']);
+
+//Halaman Home
+Route::get('/', [CompanyProfile::class, 'home']);
+
+//Prefix Produk
+Route::prefix('category')->group(function () {
+    Route::get('/{id}', [CompanyProfile::class, 'produk']);
+});
+
+//Params News
+Route::get('/news', [CompanyProfile::class, 'news']);
+
+//Prefix Program
+Route::prefix('program')->group(function () {
+    Route::get('/{id}', [CompanyProfile::class, 'program']);
+});
+
+//About
+Route::get('/aboutUs', [CompanyProfile::class, 'about']);
+
+//Contact us
+Route::get('/contactUs', [CompanyProfile::class, 'contact']);

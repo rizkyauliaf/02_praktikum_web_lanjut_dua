@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use PharIo\Manifest\Url;
 
-class PageController extends Controller
+class CompanyProfile extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,20 +14,12 @@ class PageController extends Controller
     public function index()
     {
         //
-        // return "Selamat Datang";
-        return "Selamat Datang di Halaman Awal Website";
+        return "Welcome";
     }
 
-    public function about()
+    public function home()
     {
-        //
-        return "";
-    }
-
-    public function articles($id)
-    {
-        //
-        return "Halaman Articles dengan ID" . $id;
+        return "Selamat Datang di DEJOSS COMPANY PROFILE";
     }
 
     /**
@@ -36,9 +27,10 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function produk($id)
     {
         //
+        return '<a href="https://www.educastudio.com/category/' . $id . '">https://www.educastudio.com/category/' . $id . '</a>';
     }
 
     /**
@@ -47,10 +39,16 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    // public function news($id = null)
+    // {
+    //     if ($id == null) return '<a href="https://www.educastudio.com/news">
+    //         https://www.educastudio.com/news/</a>';
+    //     return '<a href="https://www.educastudio.com/news">
+    //         https://www.educastudio.com/news/</a>';
+    // }
+    public function news()
     {
-        //
-
+        return redirect("https://www.educastudio.com/news");
     }
 
     /**
@@ -59,20 +57,24 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function program($id)
     {
-        //
+        return '<a href="https://www.educastudio.com/program/' . $id . '">https://www.educastudio.com/program/' . $id . '</a>';
     }
 
+    public function about()
+    {
+        return redirect("https://www.educastudio.com/about-us");
+    }
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function contact()
     {
-        //
+        return redirect("https://www.educastudio.com/contact-us");
     }
 
     /**
